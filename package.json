@@ -1,0 +1,21 @@
+{
+  "name": "luxora-3d-showcase",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Luxora 3D Scroll Frame Animation & Luxury Eyewear Store",
+  "scripts": {
+    "build": "echo 'Static assets ready for deployment'",
+    "start": "python server.py",
+    "dev": "python server.py"
+  },
+  "keywords": [
+    "3d-animation",
+    "scroll-driven",
+    "canvas",
+    "luxury",
+    "ecommerce",
+    "vercel"
+  ],
+  "author": "mhdimran124-lang",
+  "license": "MIT"
+}
