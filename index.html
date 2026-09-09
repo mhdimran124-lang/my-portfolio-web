@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUXORA — Signature Aviator // 3D Experience</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN + Stitch Luxury Theme Configuration -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"secondary-fixed":"#fedeb2","secondary-fixed-dim":"#e0c298","on-surface":"#1b1c1a","inverse-primary":"#c9c6c5","on-secondary-fixed":"#281800","primary-container":"#1c1b1b","error":"#ba1a1a","inverse-on-surface":"#f2f0ed","on-background":"#1b1c1a","tertiary-fixed":"#dde3e7","primary-fixed-dim":"#c9c6c5","secondary":"#725b38","surface-container-lowest":"#ffffff","on-primary":"#ffffff","outline":"#747878","on-secondary-fixed-variant":"#584323","surface":"#fbf9f6","primary-fixed":"#e5e2e1","on-tertiary-fixed-variant":"#41484b","primary":"#000000","surface-container-low":"#f5f3f0","tertiary-container":"#161c1f","on-primary-fixed-variant":"#474646","on-tertiary-container":"#7e8588","outline-variant":"#c4c7c7","surface-bright":"#fbf9f6","on-tertiary":"#ffffff","tertiary-fixed-dim":"#c1c7cb","surface-tint":"#5f5e5e","surface-container-high":"#eae8e5","error-container":"#ffdad6","inverse-surface":"#30312f","tertiary":"#000000","on-secondary":"#ffffff","background":"#fbf9f6","on-tertiary-fixed":"#161c1f","on-surface-variant":"#444748","surface-container":"#efeeeb","on-error-container":"#93000a","surface-dim":"#dbdad7","on-primary-fixed":"#1c1b1b","surface-variant":"#e4e2df","secondary-container":"#fedeb2","on-secondary-container":"#78603e","on-primary-container":"#858383","on-error":"#ffffff","surface-container-highest":"#e4e2df"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xxs":"0.25rem","gutter-mobile":"1rem","space-4xl":"9rem","space-lg":"1.5rem","space-md":"1rem","space-xs":"0.5rem","space-3xl":"6rem","space-sm":"0.75rem","margin-mobile":"1.25rem","gutter-desktop":"2.5rem","space-2xl":"4rem","margin-desktop":"5rem","space-xl":"2.5rem"},"fontFamily":{"caption":["Inter"],"subheading-editorial":["Playfair Display"],"headline-xl":["Playfair Display"],"headline-xl-mobile":["Playfair Display"],"label-caps":["Inter"],"body-sm":["Inter"],"headline-sm":["Playfair Display"],"body-lg":["Inter"],"body-md":["Inter"],"headline-lg-mobile":["Playfair Display"],"display-hero":["Playfair Display"],"headline-lg":["Playfair Display"],"headline-md":["Playfair Display"],"display-hero-mobile":["Playfair Display"]},"fontSize":{"caption":["12px",{"lineHeight":"18px","letterSpacing":"0.02em","fontWeight":"400"}],"subheading-editorial":["18px",{"lineHeight":"28px","letterSpacing":"0.02em","fontWeight":"400"}],"headline-xl":["48px",{"lineHeight":"56px","letterSpacing":"-0.015em","fontWeight":"400"}],"headline-xl-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"400"}],"label-caps":["11px",{"lineHeight":"14px","letterSpacing":"0.18em","fontWeight":"500"}],"body-sm":["13px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"400"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"0.01em","fontWeight":"500"}],"body-lg":["18px",{"lineHeight":"30px","letterSpacing":"-0.005em","fontWeight":"300"}],"body-md":["15px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"300"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","letterSpacing":"0em","fontWeight":"400"}],"display-hero":["72px",{"lineHeight":"80px","letterSpacing":"-0.02em","fontWeight":"400"}],"headline-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"0em","fontWeight":"500"}],"display-hero-mobile":["40px",{"lineHeight":"48px","letterSpacing":"-0.01em","fontWeight":"400"}]}}}};</script>
+
+  <!-- Main Animation & Layout Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="loading-state bg-surface font-body-md text-body-md text-on-surface antialiased">
+
+  <!-- Preloader Screen -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-content">
+      <div class="preloader-brand">
+        <span class="brand-badge">THE SIGNATURE COLLECTION</span>
+        <h1>LUXORA</h1>
+      </div>
+      <div class="loader-track">
+        <div id="loader-bar" class="loader-bar"></div>
+      </div>
+      <div class="loader-meta">
+        <span id="loader-status" class="loader-status">Preloading 240 HD frames...</span>
+        <span id="loader-percent" class="loader-percent">0%</span>
+      </div>
+      <p class="loader-hint">Buffering 3D interactive sequence for instantaneous scrubbing</p>
+    </div>
+  </div>
+
+  <!-- Unified Sticky Navigation Bar -->
+  <header id="header-nav" class="header-nav">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <span class="logo-mark">LX</span>
+        <div class="flex flex-col">
+          <span class="logo-text tracking-widest font-subheading-editorial font-bold text-sm md:text-base">LUXORA</span>
+          <span class="text-[9px] tracking-[0.25em] text-secondary uppercase font-semibold hidden sm:inline">Veneto Atelier</span>
+        </div>
+      </div>
+
+      <!-- Center Nav Anchors -->
+      <nav class="hidden lg:flex items-center gap-6 text-xs uppercase tracking-widest font-label-caps">
+        <a href="#scroll-container" class="nav-link hover:text-secondary transition-colors">3D Model</a>
+        <a href="#featured-signature" class="nav-link hover:text-secondary transition-colors">The Signature</a>
+        <a href="#editorial-section" class="nav-link hover:text-secondary transition-colors">Editorial</a>
+        <a href="#collection-section" class="nav-link hover:text-secondary transition-colors">Collection</a>
+        <a href="#reviews-section" class="nav-link hover:text-secondary transition-colors">Reviews</a>
+      </nav>
+
+      <div class="nav-metrics">
+        <span id="frame-counter" class="frame-counter">FRAME 001 / 240</span>
+        <div class="view-toggle">
+          <button id="fit-btn" class="toggle-btn" title="Toggle aspect fill">Cover</button>
+        </div>
+        <a href="#featured-signature" class="hidden sm:inline-flex items-center gap-1 px-3 py-1.5 bg-primary text-on-primary font-label-caps text-[11px] uppercase tracking-wider hover:bg-secondary transition-colors">
+          Order — $149
+        </a>
+        <button id="nav-cart-btn" class="relative p-2 text-on-surface hover:text-secondary transition-colors flex items-center justify-center" aria-label="Open Shopping Bag" title="View Shopping Bag">
+          <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+          <span id="cart-badge" class="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full bg-secondary text-white font-caption text-[10px] leading-none flex items-center justify-center font-bold">1</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scroll Progress Indicator (Right Edge) -->
+  <div class="scroll-tracker" aria-hidden="true">
+    <div id="scroll-thumb" class="scroll-thumb"></div>
+  </div>
+
+  <!-- PRIMARY 3D SCROLL ANIMATION TRACK -->
+  <main id="scroll-container" class="scroll-track">
+    <div id="canvas-container" class="sticky-viewport">
+      <canvas id="product-canvas"></canvas>
+
+      <!-- Centered Hero Title & Tagline Overlay (Fades out across first 30% scroll) -->
+      <div id="hero-overlay" class="hero-overlay pointer-events-none">
+        <span class="hero-badge">THE SIGNATURE COLLECTION</span>
+        <h1 class="hero-title">LUXORA</h1>
+        <p class="hero-subheading">See the world differently.</p>
+        <div class="hero-tagline-details">
+          <span>Handcrafted in Veneto</span>
+          <span class="dot-sep"></span>
+          <span>Titanium Edition of 500</span>
+        </div>
+        <div class="hero-scroll-hint">
+          <span class="scroll-mouse"><span class="scroll-wheel"></span></span>
+          <span>Scroll to explore</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- GOOGLE STITCH E-COMMERCE STORE SECTIONS -->
+  <div id="stitch-content" class="w-full bg-surface relative z-20">
+    <div class="flex flex-col w-full">
+      <!-- 2. FEATURED PRODUCT SECTION -->
+<section class="w-full py-space-3xl bg-surface" id="featured-signature">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-gutter-desktop lg:px-margin-desktop">
+<div class="text-center max-w-xl mx-auto mb-space-2xl">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.25em] block mb-space-xxs">FLAGSHIP SPECIFICATION</span>
+<h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface mb-space-xs">THE SIGNATURE</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Designed to make an impression. Exacting proportions tailored for enduring poise.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start bg-surface-container-lowest p-space-md md:p-space-xl shadow-sm">
+<!-- Left Visuals & Gallery Showcase -->
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<div class="w-full aspect-[4/3] bg-surface-container-low overflow-hidden relative">
+<img alt="Primary detailed view of LUXORA Signature Aviator" class="w-full h-full object-cover object-center transition-all duration-300" id="main-product-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2kuxjSFws5wF9IDI4lkEYAGWrLhBYcUPBDAfIQXshfKI1_8NWnjayC7WvhKq-7DGKSvyVaM3yYKgrK85YTiZsRhCJI4jr3tIxGp7qCw9xBUppukaF8UCC0Fc-XIbGYLdf4YzIuPGy05WwsrXHU0LmcqmToffCleEmYsSl-JZtFHmseezH0TCEsVQuFy2uguOsLVO3oBpZAxkWsKuOIhMMT6o2JVxtRcP6s-rG9pSgDm8EIjs-ydjjTw"/>
+<span class="absolute top-space-sm left-space-sm bg-primary text-on-primary px-space-sm py-1 font-label-caps text-label-caps uppercase tracking-widest">
+              TITANIUM CORE
+            </span>
+</div>
+<!-- Thumbnails -->
+<div class="grid grid-cols-3 gap-space-sm">
+<button class="aspect-square bg-surface-container-low overflow-hidden hover:opacity-100 opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-secondary" onclick="document.getElementById('main-product-img').src='https://lh3.googleusercontent.com/aida-public/AB6AXuA2kuxjSFws5wF9IDI4lkEYAGWrLhBYcUPBDAfIQXshfKI1_8NWnjayC7WvhKq-7DGKSvyVaM3yYKgrK85YTiZsRhCJI4jr3tIxGp7qCw9xBUppukaF8UCC0Fc-XIbGYLdf4YzIuPGy05WwsrXHU0LmcqmToffCleEmYsSl-JZtFHmseezH0TCEsVQuFy2uguOsLVO3oBpZAxkWsKuOIhMMT6o2JVxtRcP6s-rG9pSgDm8EIjs-ydjjTw'">
+<img alt="Signature Aviator perspective 1" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2kuxjSFws5wF9IDI4lkEYAGWrLhBYcUPBDAfIQXshfKI1_8NWnjayC7WvhKq-7DGKSvyVaM3yYKgrK85YTiZsRhCJI4jr3tIxGp7qCw9xBUppukaF8UCC0Fc-XIbGYLdf4YzIuPGy05WwsrXHU0LmcqmToffCleEmYsSl-JZtFHmseezH0TCEsVQuFy2uguOsLVO3oBpZAxkWsKuOIhMMT6o2JVxtRcP6s-rG9pSgDm8EIjs-ydjjTw"/>
+</button>
+<button class="aspect-square bg-surface-container-low overflow-hidden hover:opacity-100 opacity-70 transition-opacity focus:outline-none focus:ring-2 focus:ring-secondary" onclick="document.getElementById('main-product-img').src='https://lh3.googleusercontent.com/aida-public/AB6AXuB9ymxX8H-xbz0lkFULV4xyCeWxTDr0QlkhvRugh_2Mq1CUh2QtdHo25rLLlLUFoaum1iaxX7jcBG32pGaNQKwRPILQ0Ty4US5qT8WnikGWbkO_pPnGEdCCFhO7fcvRVwsjWazSPOir-IMrMuATfiBn0xntQAaQd6yqNArRgsQnOcqipRDsij5hKQYud-GSGZPvEE8v_oTqEiGxP6cJtcaoOk6efoozB4FEIovc61tDsw7V_bybGPol0Q'">
+<img alt="Signature Aviator temple profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9ymxX8H-xbz0lkFULV4xyCeWxTDr0QlkhvRugh_2Mq1CUh2QtdHo25rLLlLUFoaum1iaxX7jcBG32pGaNQKwRPILQ0Ty4US5qT8WnikGWbkO_pPnGEdCCFhO7fcvRVwsjWazSPOir-IMrMuATfiBn0xntQAaQd6yqNArRgsQnOcqipRDsij5hKQYud-GSGZPvEE8v_oTqEiGxP6cJtcaoOk6efoozB4FEIovc61tDsw7V_bybGPol0Q"/>
+</button>
+<button class="aspect-square bg-surface-container-low overflow-hidden hover:opacity-100 opacity-70 transition-opacity focus:outline-none focus:ring-2 focus:ring-secondary" onclick="document.getElementById('main-product-img').src='https://lh3.googleusercontent.com/aida-public/AB6AXuCqHjVXnKjhqaQRHQzBTtWmcsG5F1EI_iRduWj1NiELbJyiDUvYlzm0VXll35YOoU0Fx0-eW693Hs334xNNO_atFhcX2mb8rHASSyw8eTQq70bNHRgiCfXhSeRa1BY05fzCbM2zmpkm9JcvLjt1NTJpfYxVOsttvQrnEu0AH5DNkrJ6jMM8AOcYIs23JKz8z4yz3VNFHjPY1odI97uXa7C-NihdtrWGnxbk1dUmQ3Df0MpXBf0PYH6tJg'">
+<img alt="Signature Aviator alternative finish" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqHjVXnKjhqaQRHQzBTtWmcsG5F1EI_iRduWj1NiELbJyiDUvYlzm0VXll35YOoU0Fx0-eW693Hs334xNNO_atFhcX2mb8rHASSyw8eTQq70bNHRgiCfXhSeRa1BY05fzCbM2zmpkm9JcvLjt1NTJpfYxVOsttvQrnEu0AH5DNkrJ6jMM8AOcYIs23JKz8z4yz3VNFHjPY1odI97uXa7C-NihdtrWGnxbk1dUmQ3Df0MpXBf0PYH6tJg"/>
+</button>
+</div>
+</div>
+<!-- Right Product Configuration Matrix -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-secondary tracking-widest">Aviator Series</span>
+<!-- 5-Star Reviews -->
+<div class="flex items-center gap-1 text-secondary">
+<div class="flex items-center text-[16px]">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant font-medium ml-1">5.0 (148 reviews)</span>
+</div>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface leading-tight">Signature Aviator</h3>
+<div class="flex items-baseline gap-space-sm">
+<span class="font-subheading-editorial text-2xl font-semibold text-on-surface">$149</span>
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider">Taxes &amp; Duties Included</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Engineered from aircraft-grade titanium and hand-polished acetate, featuring ultra-clarity polarized smoke lenses with anti-reflective back coating.
+          </p>
+<div class="bg-surface-container-low p-space-sm flex items-center justify-between font-caption text-caption text-on-surface-variant">
+<span>Dimensions:</span>
+<span class="font-mono text-on-surface font-medium">54 □ 18 145 mm</span>
+</div>
+<!-- Selectors Group -->
+<div class="flex flex-col gap-space-md pt-space-xs">
+<!-- Color Selector -->
+<div>
+<div class="flex justify-between items-center mb-space-xs">
+<label class="font-label-caps text-label-caps text-on-surface uppercase tracking-wider">Frame Tone:</label>
+<span class="font-caption text-caption text-on-surface-variant" id="selected-color-label">Soot Black / Polished Gold</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button aria-label="Black with Gold" class="w-7 h-7 rounded-full bg-primary ring-2 ring-offset-2 ring-primary focus:outline-none"></button>
+<button aria-label="Champagne Gold" class="w-7 h-7 rounded-full bg-secondary-fixed ring-1 ring-outline-variant hover:ring-secondary focus:outline-none"></button>
+<button aria-label="Dark Amber Tortoise" class="w-7 h-7 rounded-full bg-secondary hover:ring-2 hover:ring-secondary focus:outline-none"></button>
+</div>
+</div>
+<!-- Lens Selector -->
+<div>
+<div class="flex justify-between items-center mb-space-xs">
+<label class="font-label-caps text-label-caps text-on-surface uppercase tracking-wider">Lens Tint:</label>
+<span class="font-caption text-caption text-on-surface-variant">Polarized Smoke</span>
+</div>
+<div class="grid grid-cols-3 gap-space-xs">
+<button class="px-space-sm py-2 text-center font-label-caps text-label-caps uppercase bg-primary text-on-primary">Smoke</button>
+<button class="px-space-sm py-2 text-center font-label-caps text-label-caps uppercase bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors">Amber</button>
+<button class="px-space-sm py-2 text-center font-label-caps text-label-caps uppercase bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors">Deep Green</button>
+</div>
+</div>
+<!-- Size Selector -->
+<div>
+<div class="flex justify-between items-center mb-space-xs">
+<label class="font-label-caps text-label-caps text-on-surface uppercase tracking-wider">Frame Scale:</label>
+<a id="fit-guide-btn" class="font-caption text-caption text-secondary hover:text-primary underline underline-offset-4 cursor-pointer transition-colors" href="javascript:void(0)">Fit Guide</a>
+</div>
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="px-space-sm py-2 text-center font-label-caps text-label-caps uppercase bg-primary text-on-primary">Standard 54mm</button>
+<button class="px-space-sm py-2 text-center font-label-caps text-label-caps uppercase bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors">Wide 58mm</button>
+</div>
+</div>
+<!-- Quantity & CTA Actions -->
+<div class="pt-space-xs flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<!-- Quantity Counter -->
+<div class="flex items-center bg-surface-container px-space-sm py-2">
+<button aria-label="Decrease quantity" class="text-on-surface hover:text-secondary px-1 text-[16px] font-bold">-</button>
+<span class="px-4 font-caption text-caption font-medium">1</span>
+<button aria-label="Increase quantity" class="text-on-surface hover:text-secondary px-1 text-[16px] font-bold">+</button>
+</div>
+<button id="add-to-bag-btn" class="flex-1 py-3 px-space-md bg-primary text-on-primary font-label-caps text-label-caps uppercase tracking-[0.2em] hover:bg-on-surface-variant transition-colors flex items-center justify-center gap-space-xs cursor-pointer shadow-md hover:shadow-lg active:scale-[0.99] transition-all">
+<span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+                  ADD TO BAG
+                </button>
+</div>
+<button id="buy-now-btn" class="w-full py-3 px-space-md bg-secondary-fixed text-on-secondary-fixed font-label-caps text-label-caps uppercase tracking-[0.2em] hover:bg-secondary-fixed-dim transition-colors text-center font-medium cursor-pointer shadow-md hover:shadow-lg active:scale-[0.99] transition-all">
+                BUY NOW — $149
+              </button>
+</div>
+</div>
+<div class="pt-space-sm flex items-center justify-center gap-space-md text-on-surface-variant font-caption text-caption text-center">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">local_shipping</span>
+              Free global shipping over $100
+            </span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">autorenew</span>
+              30-day home trial
+            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. PRODUCT DETAILS / 4 KEY BENEFITS -->
+<section class="w-full py-space-2xl bg-surface-container-low">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-gutter-desktop lg:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Benefit 1 -->
+<div class="p-space-lg bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">wb_sunny</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface uppercase tracking-[0.18em]">UV400 PROTECTION</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Full spectrum UVA/UVB blockage with optical purity lenses designed for vibrant clarity and zero fatigue.
+          </p>
+</div>
+<!-- Benefit 2 -->
+<div class="p-space-lg bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">clock_loader_40</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface uppercase tracking-[0.18em]">LIGHTWEIGHT FRAME</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Aerospace titanium hinges and balanced acetate stems engineered for featherlight all-day ergonomic comfort.
+          </p>
+</div>
+<!-- Benefit 3 -->
+<div class="p-space-lg bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">schedule</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface uppercase tracking-[0.18em]">TIMELESS DESIGN</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            A refined silhouette built beyond transient trends, remaining perpetually relevant for every destination.
+          </p>
+</div>
+<!-- Benefit 4 -->
+<div class="p-space-lg bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">diamond</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface uppercase tracking-[0.18em]">PREMIUM FINISH</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Hand-burnished bevels, custom monoblock hinges, and mineral glass accents crafted with obsessive scrutiny.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. FULL-WIDTH EDITORIAL SECTION -->
+<section id="editorial-section" class="relative w-full py-space-3xl lg:py-space-4xl overflow-hidden bg-primary-container">
+<div class="absolute inset-0 z-0">
+<img alt="Sophisticated woman wearing LUXORA eyewear relaxing on Parisian balcony overlooking the Eiffel Tower" class="w-full h-full object-cover object-center opacity-85" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFcuJ3WH0nSCnwBQtfpKQoj7MmnM946in-cCArBRGsx7bKM2zdthbmMkNjc6LrQyiLQCTJhKPrAXh2LQxQauBgiYgt21n83QfcHBI2fxQNvU75Wmj8MZphMSKAAVgEmsI5odu8CGrsnWEFGY7iqrIylrH-U-i_3RZys5NrpeQlFnrs0aRUqMKLqeU2dIv1ls7QDoQainKuSNd4yX7b51Mbr9i49DOhQCP3TDpkz--bJPt5JRpGXQZ5OA"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary-container/90 via-primary-container/50 to-transparent"></div>
+</div>
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-gutter-desktop lg:px-margin-desktop relative z-10">
+<div class="max-w-lg bg-surface/95 backdrop-blur-md p-space-xl lg:p-space-2xl shadow-xl">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.25em] block mb-space-xxs">EDITORIAL VOL. 04</span>
+<h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface leading-tight mb-space-sm">
+          MADE FOR EVERY MOMENT
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-lg leading-relaxed">
+          From bright city streets to quiet escapes, Signature is designed to move with you through light, shadow, and architectural elegance.
+        </p>
+<a class="inline-flex items-center justify-center px-space-xl py-space-sm bg-primary text-on-primary font-label-caps text-label-caps uppercase tracking-[0.2em] hover:bg-secondary transition-colors duration-200 cursor-pointer" href="#collection-section">
+          DISCOVER MORE
+        </a>
+</div>
+</div>
+</section>
+<!-- 5. EXPLORE THE COLLECTION (4 PRODUCT CARDS) -->
+<section id="collection-section" class="w-full py-space-3xl bg-surface">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-gutter-desktop lg:px-margin-desktop">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl gap-space-sm">
+<div>
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.25em] block mb-space-xxs">CURATED CATALOGUE</span>
+<h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface">EXPLORE THE COLLECTION</h2>
+</div>
+<a id="view-full-range-btn" class="inline-flex items-center gap-space-xs font-label-caps text-label-caps text-on-surface hover:text-secondary uppercase tracking-[0.18em] transition-colors group cursor-pointer" href="#collection-section">
+          VIEW FULL RANGE
+          <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Product 1: Signature Aviator -->
+<div class="flex flex-col bg-surface-container-lowest group shadow-sm overflow-hidden">
+<div class="aspect-[4/5] bg-surface-container-low relative overflow-hidden">
+<img alt="Signature Aviator luxury sunglasses in black frame" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2kuxjSFws5wF9IDI4lkEYAGWrLhBYcUPBDAfIQXshfKI1_8NWnjayC7WvhKq-7DGKSvyVaM3yYKgrK85YTiZsRhCJI4jr3tIxGp7qCw9xBUppukaF8UCC0Fc-XIbGYLdf4YzIuPGy05WwsrXHU0LmcqmToffCleEmYsSl-JZtFHmseezH0TCEsVQuFy2uguOsLVO3oBpZAxkWsKuOIhMMT6o2JVxtRcP6s-rG9pSgDm8EIjs-ydjjTw"/>
+<span class="absolute top-3 left-3 bg-surface text-on-surface px-space-xs py-0.5 font-label-caps text-[10px] uppercase tracking-wider">
+              Iconic
+            </span>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm bg-surface-container-lowest">
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest block mb-1">Aviator Series</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Signature Aviator</h4>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-subheading-editorial text-subheading-editorial text-on-surface font-medium">$149</span>
+<a class="view-product-btn font-label-caps text-label-caps text-primary hover:text-secondary uppercase tracking-widest underline underline-offset-4 cursor-pointer" href="#featured-signature" data-title="Signature Aviator" data-price="$149" data-series="Aviator Series" data-img="https://lh3.googleusercontent.com/aida-public/AB6AXuA2kuxjSFws5wF9IDI4lkEYAGWrLhBYcUPBDAfIQXshfKI1_8NWnjayC7WvhKq-7DGKSvyVaM3yYKgrK85YTiZsRhCJI4jr3tIxGp7qCw9xBUppukaF8UCC0Fc-XIbGYLdf4YzIuPGy05WwsrXHU0LmcqmToffCleEmYsSl-JZtFHmseezH0TCEsVQuFy2uguOsLVO3oBpZAxkWsKuOIhMMT6o2JVxtRcP6s-rG9pSgDm8EIjs-ydjjTw">VIEW PRODUCT</a>
+</div>
+</div>
+</div>
+<!-- Product 2: Classic Black -->
+<div class="flex flex-col bg-surface-container-lowest group shadow-sm overflow-hidden">
+<div class="aspect-[4/5] bg-surface-container-low relative overflow-hidden">
+<img alt="Classic Black optical luxury eyewear with gold hinge" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9ymxX8H-xbz0lkFULV4xyCeWxTDr0QlkhvRugh_2Mq1CUh2QtdHo25rLLlLUFoaum1iaxX7jcBG32pGaNQKwRPILQ0Ty4US5qT8WnikGWbkO_pPnGEdCCFhO7fcvRVwsjWazSPOir-IMrMuATfiBn0xntQAaQd6yqNArRgsQnOcqipRDsij5hKQYud-GSGZPvEE8v_oTqEiGxP6cJtcaoOk6efoozB4FEIovc61tDsw7V_bybGPol0Q"/>
+<span class="absolute top-3 left-3 bg-surface text-on-surface px-space-xs py-0.5 font-label-caps text-[10px] uppercase tracking-wider">
+              Popular
+            </span>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm bg-surface-container-lowest">
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest block mb-1">Acetate Modern</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Classic Black</h4>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-subheading-editorial text-subheading-editorial text-on-surface font-medium">$139</span>
+<a class="view-product-btn font-label-caps text-label-caps text-primary hover:text-secondary uppercase tracking-widest underline underline-offset-4 cursor-pointer" href="#featured-signature" data-title="Classic Black" data-price="$139" data-series="Acetate Modern" data-img="https://lh3.googleusercontent.com/aida-public/AB6AXuB9ymxX8H-xbz0lkFULV4xyCeWxTDr0QlkhvRugh_2Mq1CUh2QtdHo25rLLlLUFoaum1iaxX7jcBG32pGaNQKwRPILQ0Ty4US5qT8WnikGWbkO_pPnGEdCCFhO7fcvRVwsjWazSPOir-IMrMuATfiBn0xntQAaQd6yqNArRgsQnOcqipRDsij5hKQYud-GSGZPvEE8v_oTqEiGxP6cJtcaoOk6efoozB4FEIovc61tDsw7V_bybGPol0Q">VIEW PRODUCT</a>
+</div>
+</div>
+</div>
+<!-- Product 3: Modern Square -->
+<div class="flex flex-col bg-surface-container-lowest group shadow-sm overflow-hidden">
+<div class="aspect-[4/5] bg-surface-container-low relative overflow-hidden">
+<img alt="Modern Square dark tortoiseshell luxury sunglasses" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqHjVXnKjhqaQRHQzBTtWmcsG5F1EI_iRduWj1NiELbJyiDUvYlzm0VXll35YOoU0Fx0-eW693Hs334xNNO_atFhcX2mb8rHASSyw8eTQq70bNHRgiCfXhSeRa1BY05fzCbM2zmpkm9JcvLjt1NTJpfYxVOsttvQrnEu0AH5DNkrJ6jMM8AOcYIs23JKz8z4yz3VNFHjPY1odI97uXa7C-NihdtrWGnxbk1dUmQ3Df0MpXBf0PYH6tJg"/>
+<span class="absolute top-3 left-3 bg-secondary text-on-secondary px-space-xs py-0.5 font-label-caps text-[10px] uppercase tracking-wider">
+              Limited
+            </span>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm bg-surface-container-lowest">
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest block mb-1">Architectural</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Modern Square</h4>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-subheading-editorial text-subheading-editorial text-on-surface font-medium">$159</span>
+<a class="view-product-btn font-label-caps text-label-caps text-primary hover:text-secondary uppercase tracking-widest underline underline-offset-4 cursor-pointer" href="#featured-signature" data-title="Modern Square" data-price="$159" data-series="Architectural" data-img="https://lh3.googleusercontent.com/aida-public/AB6AXuCqHjVXnKjhqaQRHQzBTtWmcsG5F1EI_iRduWj1NiELbJyiDUvYlzm0VXll35YOoU0Fx0-eW693Hs334xNNO_atFhcX2mb8rHASSyw8eTQq70bNHRgiCfXhSeRa1BY05fzCbM2zmpkm9JcvLjt1NTJpfYxVOsttvQrnEu0AH5DNkrJ6jMM8AOcYIs23JKz8z4yz3VNFHjPY1odI97uXa7C-NihdtrWGnxbk1dUmQ3Df0MpXBf0PYH6tJg">VIEW PRODUCT</a>
+</div>
+</div>
+</div>
+<!-- Product 4: Everyday Essential -->
+<div class="flex flex-col bg-surface-container-lowest group shadow-sm overflow-hidden">
+<div class="aspect-[4/5] bg-surface-container-low relative overflow-hidden">
+<img alt="Everyday Essential minimalist luxury sunglasses" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2kuxjSFws5wF9IDI4lkEYAGWrLhBYcUPBDAfIQXshfKI1_8NWnjayC7WvhKq-7DGKSvyVaM3yYKgrK85YTiZsRhCJI4jr3tIxGp7qCw9xBUppukaF8UCC0Fc-XIbGYLdf4YzIuPGy05WwsrXHU0LmcqmToffCleEmYsSl-JZtFHmseezH0TCEsVQuFy2uguOsLVO3oBpZAxkWsKuOIhMMT6o2JVxtRcP6s-rG9pSgDm8EIjs-ydjjTw"/>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm bg-surface-container-lowest">
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest block mb-1">Minimalist Metal</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Everyday Essential</h4>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-subheading-editorial text-subheading-editorial text-on-surface font-medium">$129</span>
+<a class="view-product-btn font-label-caps text-label-caps text-primary hover:text-secondary uppercase tracking-widest underline underline-offset-4 cursor-pointer" href="#featured-signature" data-title="Everyday Essential" data-price="$129" data-series="Minimalist Metal" data-img="https://lh3.googleusercontent.com/aida-public/AB6AXuA2kuxjSFws5wF9IDI4lkEYAGWrLhBYcUPBDAfIQXshfKI1_8NWnjayC7WvhKq-7DGKSvyVaM3yYKgrK85YTiZsRhCJI4jr3tIxGp7qCw9xBUppukaF8UCC0Fc-XIbGYLdf4YzIuPGy05WwsrXHU0LmcqmToffCleEmYsSl-JZtFHmseezH0TCEsVQuFy2uguOsLVO3oBpZAxkWsKuOIhMMT6o2JVxtRcP6s-rG9pSgDm8EIjs-ydjjTw">VIEW PRODUCT</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. BRAND STORY ("OUR STORY") -->
+<section id="story-section" class="w-full py-space-3xl bg-surface-container-low">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-gutter-desktop lg:px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<!-- Artful Close-up Craft Image -->
+<div class="lg:col-span-6 order-2 lg:order-1 relative">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden shadow-md">
+<img alt="Artful close up of precision gold eyewear hinges and craftsmanship" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9ymxX8H-xbz0lkFULV4xyCeWxTDr0QlkhvRugh_2Mq1CUh2QtdHo25rLLlLUFoaum1iaxX7jcBG32pGaNQKwRPILQ0Ty4US5qT8WnikGWbkO_pPnGEdCCFhO7fcvRVwsjWazSPOir-IMrMuATfiBn0xntQAaQd6yqNArRgsQnOcqipRDsij5hKQYud-GSGZPvEE8v_oTqEiGxP6cJtcaoOk6efoozB4FEIovc61tDsw7V_bybGPol0Q"/>
+</div>
+<div class="absolute -bottom-6 -right-6 hidden sm:block bg-surface-container-highest p-space-md shadow-lg max-w-xs">
+<p class="font-caption text-caption text-on-surface italic">
+              "Optical architecture is the silent art of balancing millimeter physics with human expression."
+            </p>
+</div>
+</div>
+<!-- Story Editorial Copy -->
+<div class="lg:col-span-6 order-1 lg:order-2 flex flex-col items-start gap-space-md lg:pl-space-lg">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.25em]">ATELIER PHILOSOPHY</span>
+<h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface leading-tight">
+            DESIGNED WITH PURPOSE
+          </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            LUXORA creates refined eyewear that combines timeless silhouettes, modern comfort, and understated luxury. Born out of an obsession with purity of form, each frame undergoes 72 sequential stages of hand-finishing.
+          </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            We reject the disposable cadence of fast luxury. By paring back unnecessary logos and superfluous embellishment, what remains is authentic weight, exquisite poise, and crystalline optical acuity.
+          </p>
+<div class="pt-space-sm">
+<a class="inline-flex items-center justify-center px-space-xl py-space-sm bg-primary text-on-primary font-label-caps text-label-caps uppercase tracking-[0.2em] hover:bg-secondary transition-colors cursor-pointer" href="#story-section">
+              OUR STORY
+            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. QUALITY & TRUST PILLARS -->
+<section class="w-full py-space-xl bg-surface-container">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-gutter-desktop lg:px-margin-desktop">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-lg">
+<!-- Pillar 1 -->
+<div class="flex flex-col items-center text-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[24px]">verified</span>
+<h5 class="font-label-caps text-label-caps text-on-surface uppercase tracking-wider font-semibold">PREMIUM MATERIALS</h5>
+<span class="font-caption text-caption text-on-surface-variant">Carefully selected details &amp; metals</span>
+</div>
+<!-- Pillar 2 -->
+<div class="flex flex-col items-center text-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[24px]">lock</span>
+<h5 class="font-label-caps text-label-caps text-on-surface uppercase tracking-wider font-semibold">SECURE CHECKOUT</h5>
+<span class="font-caption text-caption text-on-surface-variant">Safe and simple encrypted shopping</span>
+</div>
+<!-- Pillar 3 -->
+<div class="flex flex-col items-center text-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[24px]">local_shipping</span>
+<h5 class="font-label-caps text-label-caps text-on-surface uppercase tracking-wider font-semibold">FAST DELIVERY</h5>
+<span class="font-caption text-caption text-on-surface-variant">Reliable global tracked shipping</span>
+</div>
+<!-- Pillar 4 -->
+<div class="flex flex-col items-center text-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[24px]">published_with_changes</span>
+<h5 class="font-label-caps text-label-caps text-on-surface uppercase tracking-wider font-semibold">EASY RETURNS</h5>
+<span class="font-caption text-caption text-on-surface-variant">Shop with confident 30-day trial</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. CUSTOMER REVIEWS -->
+<section id="reviews-section" class="w-full py-space-3xl bg-surface">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-gutter-desktop lg:px-margin-desktop">
+<div class="text-center max-w-xl mx-auto mb-space-2xl">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.25em] block mb-space-xxs">VERIFIED IMPRESSIONS</span>
+<h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface">LOVED BY THOSE WHO WEAR IT</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Review Card 1 -->
+<div class="p-space-lg bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center text-secondary">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-subheading-editorial text-subheading-editorial text-on-surface italic leading-snug">
+              "Beautiful design and incredibly comfortable."
+            </p>
+</div>
+<div class="pt-space-sm flex items-center justify-between text-on-surface-variant font-caption text-caption">
+<span class="font-medium text-on-surface">— Elena V., Paris</span>
+<span class="flex items-center gap-1 text-[11px] text-secondary">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Verified Buyer
+            </span>
+</div>
+</div>
+<!-- Review Card 2 -->
+<div class="p-space-lg bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center text-secondary">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-subheading-editorial text-subheading-editorial text-on-surface italic leading-snug">
+              "Looks even better in person. The quality feels premium."
+            </p>
+</div>
+<div class="pt-space-sm flex items-center justify-between text-on-surface-variant font-caption text-caption">
+<span class="font-medium text-on-surface">— Marcus T., New York</span>
+<span class="flex items-center gap-1 text-[11px] text-secondary">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Verified Buyer
+            </span>
+</div>
+</div>
+<!-- Review Card 3 -->
+<div class="p-space-lg bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center text-secondary">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-subheading-editorial text-subheading-editorial text-on-surface italic leading-snug">
+              "Clean, lightweight and perfect for everyday wear."
+            </p>
+</div>
+<div class="pt-space-sm flex items-center justify-between text-on-surface-variant font-caption text-caption">
+<span class="font-medium text-on-surface">— Sophia K., London</span>
+<span class="flex items-center gap-1 text-[11px] text-secondary">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Verified Buyer
+            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 9. NEWSLETTER SECTION -->
+<section class="w-full py-space-3xl bg-surface-container-high">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-gutter-desktop lg:px-margin-desktop text-center">
+<div class="max-w-2xl mx-auto flex flex-col items-center gap-space-md">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.25em]">THE PRIVILEGE JOURNAL</span>
+<h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface">STAY IN THE FRAME</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg">
+          Be the first to discover new collections, exclusive releases and special offers direct from our Venetian workshop.
+        </p>
+<form class="w-full max-w-md flex flex-col sm:flex-row gap-space-xs mt-space-sm" onsubmit="event.preventDefault(); document.getElementById('newsletter-msg').classList.remove('hidden');">
+<input class="flex-1 px-space-md py-3 bg-surface-container-lowest text-on-surface font-body-sm text-body-sm placeholder:text-on-surface-variant/60 focus:outline-none focus:ring-1 focus:ring-secondary rounded-none" placeholder="Enter your email address" required="" type="email"/>
+<button class="px-space-xl py-3 bg-primary text-on-primary font-label-caps text-label-caps uppercase tracking-[0.2em] hover:bg-secondary transition-colors duration-200" type="submit">
+            SUBSCRIBE
+          </button>
+</form>
+<div class="hidden text-secondary font-caption text-caption mt-space-xs" id="newsletter-msg">
+          Thank you. You have been added to our private dispatch.
+        </div>
+</div>
+</div>
+</section>
+    </div>
+  </div>
+
+  <!-- STITCH STORE FOOTER -->
+  <footer class="w-full bg-primary-container text-inverse-on-surface pt-space-3xl pb-space-xl"><div class="max-w-[1440px] mx-auto px-margin-mobile md:px-gutter-desktop lg:px-margin-desktop"><div class="grid grid-cols-2 md:grid-cols-4 gap-space-xl mb-space-3xl"><div class="flex flex-col gap-space-md"><span class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-inverse-primary">Shop</span><ul class="flex flex-col gap-space-sm font-body-sm text-body-sm text-primary-fixed-dim"><li class="hover:text-inverse-on-surface transition-colors"><a class="footer-nav-link" href="#collection-section">All Sunglasses</a></li><li class="hover:text-inverse-on-surface transition-colors"><a class="footer-nav-link" href="#collection-section">New Arrivals</a></li><li class="hover:text-inverse-on-surface transition-colors"><a class="footer-nav-link" href="#collection-section">Best Sellers</a></li><li class="hover:text-inverse-on-surface transition-colors"><a class="footer-nav-link" href="#collection-section">Collections</a></li></ul></div><div class="flex flex-col gap-space-md"><span class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-inverse-primary">About</span><ul class="flex flex-col gap-space-sm font-body-sm text-body-sm text-primary-fixed-dim"><li class="hover:text-inverse-on-surface transition-colors"><a class="footer-nav-link" href="#story-section">Our Story</a></li><li class="hover:text-inverse-on-surface transition-colors"><a class="footer-nav-link" href="#featured-signature">Materials</a></li><li class="hover:text-inverse-on-surface transition-colors"><a class="footer-modal-link" href="javascript:void(0)" data-topic="sustainability">Sustainability</a></li><li class="hover:text-inverse-on-surface transition-colors"><a class="footer-modal-link" href="javascript:void(0)" data-topic="contact">Contact</a></li></ul></div><div class="flex flex-col gap-space-md"><span class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-inverse-primary">Help</span><ul class="flex flex-col gap-space-sm font-body-sm text-body-sm text-primary-fixed-dim"><li class="hover:text-inverse-on-surface transition-colors"><a class="footer-modal-link" href="javascript:void(0)" data-topic="shipping">Shipping</a></li><li class="hover:text-inverse-on-surface transition-colors"><a class="footer-modal-link" href="javascript:void(0)" data-topic="returns">Returns</a></li><li class="hover:text-inverse-on-surface transition-colors"><a class="footer-modal-link" href="javascript:void(0)" data-topic="faqs">FAQs</a></li><li class="hover:text-inverse-on-surface transition-colors"><a class="footer-modal-link" href="javascript:void(0)" data-topic="size-guide">Size Guide</a></li></ul></div><div class="flex flex-col gap-space-md"><span class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-inverse-primary">Legal</span><ul class="flex flex-col gap-space-sm font-body-sm text-body-sm text-primary-fixed-dim"><li class="hover:text-inverse-on-surface transition-colors"><a class="footer-modal-link" href="javascript:void(0)" data-topic="privacy">Privacy Policy</a></li><li class="hover:text-inverse-on-surface transition-colors"><a class="footer-modal-link" href="javascript:void(0)" data-topic="terms">Terms &amp; Conditions</a></li></ul></div></div><div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="font-label-caps text-label-caps tracking-widest text-on-primary-container text-center md:text-left">LUXORA © 2026. ALL RIGHTS RESERVED.</div><div class="flex items-center gap-space-lg text-primary-fixed-dim"><a aria-label="Instagram" class="hover:text-inverse-on-surface transition-colors" href="https://instagram.com" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-[18px]">photo_camera</span></a><a aria-label="Pinterest" class="hover:text-inverse-on-surface transition-colors" href="https://pinterest.com" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-[18px]">push_pin</span></a><a aria-label="X" class="hover:text-inverse-on-surface transition-colors" href="https://x.com" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-[18px]">tag</span></a><a aria-label="YouTube" class="hover:text-inverse-on-surface transition-colors" href="https://youtube.com" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-[18px]">play_circle</span></a></div></div></div></footer>
+
+
+  <!-- SLIDE-OVER SHOPPING BAG DRAWER -->
+  <div id="cart-drawer" class="fixed inset-0 z-[200] pointer-events-none transition-all duration-300">
+    <div id="cart-backdrop" class="absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 pointer-events-none backdrop-blur-sm"></div>
+    <div id="cart-panel" class="absolute top-0 right-0 h-full w-full max-w-md bg-surface shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-out pointer-events-auto border-l border-border-glass">
+      <div class="p-6 border-b border-black/5 flex items-center justify-between bg-surface-container-low">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-secondary text-[22px]">shopping_bag</span>
+          <h3 class="font-subheading-editorial font-bold text-lg text-on-surface tracking-wide">Your Shopping Bag</h3>
+        </div>
+        <button id="close-cart-btn" class="p-2 text-on-surface-variant hover:text-on-surface rounded-full hover:bg-black/5 transition-colors">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+
+      <!-- Cart Item List -->
+      <div class="flex-1 overflow-y-auto p-6 flex flex-col gap-6">
+        <div class="flex gap-4 p-4 bg-surface-container-lowest border border-black/5 rounded-none shadow-sm">
+          <img id="cart-item-img" class="w-20 h-20 object-cover bg-surface-container-low" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2kuxjSFws5wF9IDI4lkEYAGWrLhBYcUPBDAfIQXshfKI1_8NWnjayC7WvhKq-7DGKSvyVaM3yYKgrK85YTiZsRhCJI4jr3tIxGp7qCw9xBUppukaF8UCC0Fc-XIbGYLdf4YzIuPGy05WwsrXHU0LmcqmToffCleEmYsSl-JZtFHmseezH0TCEsVQuFy2uguOsLVO3oBpZAxkWsKuOIhMMT6o2JVxtRcP6s-rG9pSgDm8EIjs-ydjjTw" alt="Product thumbnail">
+          <div class="flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-start">
+                <h4 id="cart-item-title" class="font-headline-sm text-base text-on-surface font-semibold">Signature Aviator</h4>
+                <span id="cart-item-price" class="font-subheading-editorial font-bold text-on-surface">$149</span>
+              </div>
+              <p id="cart-item-specs" class="text-xs text-on-surface-variant mt-0.5">Soot Black • Polarized Smoke • 54mm</p>
+            </div>
+            <div class="flex items-center justify-between mt-3 pt-2 border-t border-black/5">
+              <div class="flex items-center border border-black/10 bg-surface-container px-2 py-0.5">
+                <button id="cart-dec-btn" class="px-1 text-sm font-bold text-on-surface hover:text-secondary">-</button>
+                <span id="cart-item-qty" class="px-3 text-xs font-semibold">1</span>
+                <button id="cart-inc-btn" class="px-1 text-sm font-bold text-on-surface hover:text-secondary">+</button>
+              </div>
+              <button id="cart-remove-btn" class="text-xs text-red-700 hover:underline uppercase tracking-wider font-label-caps">Remove</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-3 bg-secondary/10 border border-secondary/20 flex items-center gap-2 text-xs text-secondary font-medium">
+          <span class="material-symbols-outlined text-[16px]">verified</span>
+          <span>Complimentary insured shipping applied</span>
+        </div>
+      </div>
+
+      <!-- Drawer Footer -->
+      <div class="p-6 border-t border-black/5 bg-surface-container-low flex flex-col gap-3">
+        <div class="flex justify-between text-sm">
+          <span class="text-on-surface-variant font-medium">Subtotal</span>
+          <span id="cart-subtotal" class="font-subheading-editorial font-bold text-lg text-on-surface">$149</span>
+        </div>
+        <div class="flex justify-between text-xs text-on-surface-variant">
+          <span>Shipping & Taxes</span>
+          <span class="text-emerald-700 font-semibold uppercase">Free</span>
+        </div>
+        <button id="drawer-checkout-btn" class="w-full py-3.5 bg-primary text-on-primary font-label-caps uppercase tracking-[0.2em] hover:bg-secondary transition-colors mt-2 shadow-md">
+          Proceed to Checkout
+        </button>
+        <button id="continue-shopping-btn" class="w-full py-2 text-xs text-on-surface-variant hover:text-on-surface font-label-caps uppercase tracking-wider text-center">
+          Continue Browsing
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKOUT MODAL -->
+  <div id="checkout-modal" class="fixed inset-0 z-[210] flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-300">
+    <div class="modal-backdrop absolute inset-0 bg-black/70 backdrop-blur-md"></div>
+    <div class="modal-card relative w-11/12 max-w-lg bg-surface shadow-2xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto pointer-events-auto border border-black/10">
+      <div class="flex justify-between items-start border-b border-black/5 pb-4 mb-6">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-secondary font-semibold font-label-caps">LUXORA ATELIER</span>
+          <h3 class="font-headline-lg text-2xl text-on-surface font-bold mt-1">Express Checkout</h3>
+        </div>
+        <button id="close-checkout-btn" class="p-1 text-on-surface-variant hover:text-on-surface rounded-full hover:bg-black/5">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+
+      <div id="checkout-form-view">
+        <div class="bg-surface-container p-4 mb-5 flex justify-between items-center text-sm border border-black/5">
+          <div>
+            <span class="font-bold text-on-surface" id="checkout-prod-name">Signature Aviator</span>
+            <p class="text-xs text-on-surface-variant" id="checkout-prod-details">Qty: 1 • Includes leather hard case</p>
+          </div>
+          <span class="font-subheading-editorial font-bold text-lg text-on-surface" id="checkout-total-val">$149</span>
+        </div>
+
+        <form id="checkout-form" class="flex flex-col gap-4" onsubmit="event.preventDefault(); window.submitCheckoutOrder();">
+          <div>
+            <label class="block text-xs uppercase tracking-wider font-label-caps text-on-surface font-semibold mb-1">Email for Order Dispatch</label>
+            <input type="email" required placeholder="name@example.com" class="w-full px-3 py-2.5 bg-surface-container-lowest border border-black/15 text-sm focus:outline-none focus:ring-1 focus:ring-secondary">
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs uppercase tracking-wider font-label-caps text-on-surface font-semibold mb-1">First Name</label>
+              <input type="text" required placeholder="Elena" class="w-full px-3 py-2.5 bg-surface-container-lowest border border-black/15 text-sm focus:outline-none focus:ring-1 focus:ring-secondary">
+            </div>
+            <div>
+              <label class="block text-xs uppercase tracking-wider font-label-caps text-on-surface font-semibold mb-1">Last Name</label>
+              <input type="text" required placeholder="Vance" class="w-full px-3 py-2.5 bg-surface-container-lowest border border-black/15 text-sm focus:outline-none focus:ring-1 focus:ring-secondary">
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs uppercase tracking-wider font-label-caps text-on-surface font-semibold mb-1">Shipping Address</label>
+            <input type="text" required placeholder="742 Evergreen Terrace, Apt 4" class="w-full px-3 py-2.5 bg-surface-container-lowest border border-black/15 text-sm focus:outline-none focus:ring-1 focus:ring-secondary">
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs uppercase tracking-wider font-label-caps text-on-surface font-semibold mb-1">City</label>
+              <input type="text" required placeholder="New York" class="w-full px-3 py-2.5 bg-surface-container-lowest border border-black/15 text-sm focus:outline-none focus:ring-1 focus:ring-secondary">
+            </div>
+            <div>
+              <label class="block text-xs uppercase tracking-wider font-label-caps text-on-surface font-semibold mb-1">Postal Code</label>
+              <input type="text" required placeholder="10001" class="w-full px-3 py-2.5 bg-surface-container-lowest border border-black/15 text-sm focus:outline-none focus:ring-1 focus:ring-secondary">
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <button type="submit" class="w-full py-3.5 bg-primary text-on-primary font-label-caps uppercase tracking-[0.2em] hover:bg-secondary transition-colors text-sm font-semibold shadow-md">
+              Authorize & Complete Purchase
+            </button>
+          </div>
+          <p class="text-[11px] text-center text-on-surface-variant flex items-center justify-center gap-1">
+            <span class="material-symbols-outlined text-[14px] text-emerald-700">lock</span> 256-Bit SSL Encrypted Transaction
+          </p>
+        </form>
+      </div>
+
+      <!-- Success View -->
+      <div id="checkout-success-view" class="hidden text-center py-6">
+        <div class="w-14 h-14 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto mb-4">
+          <span class="material-symbols-outlined text-[28px]">check</span>
+        </div>
+        <span class="text-xs uppercase tracking-widest text-secondary font-semibold font-label-caps">ORDER CONFIRMED</span>
+        <h4 class="font-headline-lg text-2xl text-on-surface font-bold mt-1 mb-2">Thank You For Your Order</h4>
+        <p class="text-sm text-on-surface-variant max-w-sm mx-auto mb-6">
+          Your order <strong class="text-on-surface">#LX-89240</strong> has been dispatched to our workshop in Veneto. Tracking details have been sent to your email.
+        </p>
+        <button id="close-success-btn" class="px-6 py-2.5 bg-primary text-on-primary font-label-caps text-xs uppercase tracking-widest hover:bg-secondary transition-colors">
+          Return to Atelier
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FIT GUIDE MODAL -->
+  <div id="fit-guide-modal" class="fixed inset-0 z-[210] flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-300">
+    <div class="modal-backdrop absolute inset-0 bg-black/70 backdrop-blur-md"></div>
+    <div class="modal-card relative w-11/12 max-w-lg bg-surface shadow-2xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto pointer-events-auto border border-black/10">
+      <div class="flex justify-between items-start border-b border-black/5 pb-4 mb-6">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-secondary font-semibold font-label-caps">MEASUREMENT PROTOCOL</span>
+          <h3 class="font-headline-lg text-2xl text-on-surface font-bold mt-1">LUXORA Fit Guide</h3>
+        </div>
+        <button id="close-fit-btn" class="p-1 text-on-surface-variant hover:text-on-surface rounded-full hover:bg-black/5">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+
+      <div class="flex flex-col gap-6">
+        <div class="p-4 bg-surface-container-low border border-black/5">
+          <h4 class="font-semibold text-sm text-on-surface mb-2 font-label-caps uppercase tracking-wider">Standard 54mm (Most Popular)</h4>
+          <p class="text-xs text-on-surface-variant leading-relaxed mb-3">Ideal for small to medium face profiles (cheekbone width 125mm - 138mm). Offers a classic tailored silhouette that rests naturally on the bridge.</p>
+          <div class="grid grid-cols-3 text-center text-xs font-mono bg-surface p-2 border border-black/5">
+            <div><span class="text-on-surface-variant block text-[10px]">Lens</span> 54mm</div>
+            <div><span class="text-on-surface-variant block text-[10px]">Bridge</span> 18mm</div>
+            <div><span class="text-on-surface-variant block text-[10px]">Temple</span> 145mm</div>
+          </div>
+        </div>
+
+        <div class="p-4 bg-surface-container-low border border-black/5">
+          <h4 class="font-semibold text-sm text-on-surface mb-2 font-label-caps uppercase tracking-wider">Wide 58mm (Oversized Silhouette)</h4>
+          <p class="text-xs text-on-surface-variant leading-relaxed mb-3">Designed for medium to wide face profiles (cheekbone width 139mm+), or anyone desiring maximum optical coverage with architectural presence.</p>
+          <div class="grid grid-cols-3 text-center text-xs font-mono bg-surface p-2 border border-black/5">
+            <div><span class="text-on-surface-variant block text-[10px]">Lens</span> 58mm</div>
+            <div><span class="text-on-surface-variant block text-[10px]">Bridge</span> 18mm</div>
+            <div><span class="text-on-surface-variant block text-[10px]">Temple</span> 148mm</div>
+          </div>
+        </div>
+
+        <button id="apply-fit-btn" class="w-full py-3 bg-primary text-on-primary font-label-caps text-xs uppercase tracking-widest hover:bg-secondary transition-colors">
+          Understood, Close Guide
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- HELP & POLICY MODAL -->
+  <div id="info-modal" class="fixed inset-0 z-[210] flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-300">
+    <div class="modal-backdrop absolute inset-0 bg-black/70 backdrop-blur-md"></div>
+    <div class="modal-card relative w-11/12 max-w-lg bg-surface shadow-2xl p-6 sm:p-8 max-h-[85vh] overflow-y-auto pointer-events-auto border border-black/10">
+      <div class="flex justify-between items-start border-b border-black/5 pb-4 mb-4">
+        <div>
+          <span id="info-modal-topic" class="text-xs uppercase tracking-widest text-secondary font-semibold font-label-caps">CLIENT DISPATCH</span>
+          <h3 id="info-modal-title" class="font-headline-lg text-2xl text-on-surface font-bold mt-1">Information</h3>
+        </div>
+        <button id="close-info-btn" class="p-1 text-on-surface-variant hover:text-on-surface rounded-full hover:bg-black/5">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+      <div id="info-modal-body" class="text-sm text-on-surface-variant leading-relaxed space-y-4">
+        <!-- Injected via JavaScript -->
+      </div>
+      <div class="mt-6 pt-4 border-t border-black/5">
+        <button id="dismiss-info-btn" class="w-full py-2.5 bg-primary text-on-primary font-label-caps text-xs uppercase tracking-widest hover:bg-secondary transition-colors">
+          Close Window
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING TOAST NOTIFICATION -->
+  <div id="toast" class="fixed bottom-6 right-6 z-[220] pointer-events-none transform translate-y-12 opacity-0 transition-all duration-300 flex items-center gap-3 px-5 py-3.5 bg-on-surface text-surface shadow-2xl rounded-none border border-white/10">
+    <span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+    <span id="toast-msg" class="text-xs uppercase tracking-wider font-label-caps font-semibold">Added to Bag</span>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
